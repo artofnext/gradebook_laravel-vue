@@ -81,12 +81,12 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    My Laravel
+                    My Laravel Users
                 </div>
 
                 <ul>
                     @foreach ($users as $user)
-                        <li>User {{ $user->id }} </li>
+                        <li>User {{ $user->id }} {{ $user->name }} {{ $user->email }}</li>
                     @endforeach
                 </ul>
 

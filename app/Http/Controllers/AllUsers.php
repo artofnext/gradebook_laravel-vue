@@ -11,7 +11,10 @@ class AllUsers extends Controller
     {
         // $users = User::with('roles')->get();
         // echo "Hello";
+
+        // echo "/br";
         $users = User::all();
+        // echo var_dump($users);
         return view('allusers', compact('users'));
     }
 }
