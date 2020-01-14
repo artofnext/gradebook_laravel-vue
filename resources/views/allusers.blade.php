@@ -84,11 +84,11 @@
                     My Laravel
                 </div>
 
-
-
-                <div class="links">
-                    <a href="http://localhost:8000/allusers">Show All Users</a>
-                </div>
+                <ul>
+                    @foreach ($users as $user)
+                        <li>User {{ $user->id }} </li>
+                    @endforeach
+                </ul>
 
                 {{-- <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
