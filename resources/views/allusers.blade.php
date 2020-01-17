@@ -86,7 +86,7 @@
 
                 <ul>
                     @foreach ($users as $user)
-                        <li>User {{ $user->id }} {{ $user->name }} {{ $user->email }}</li>
+                <li>User {{ $user->id }} {{ $user->name }} {{ $user->email }} {{ $roles->get($user->role_id-1)['name'] }}</li>
                     @endforeach
                 </ul>
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Roles;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\User;
 
@@ -14,7 +15,8 @@ class AllUsers extends Controller
 
         // echo "/br";
         $users = User::all();
-        // echo var_dump($users);
-        return view('allusers', compact('users'));
+        $roles = Roles::all();
+        // echo var_dump($users[0]);
+        return view('allusers', compact('users', 'roles'));
     }
 }
