@@ -38084,7 +38084,7 @@ var render = function() {
         _c("router-link", { attrs: { to: { name: "hello" } } }, [
           _vm._v("Hello World")
         ]),
-        _vm._v(" "),
+        _vm._v(" |\n        "),
         _c("router-link", { attrs: { to: { name: "users.index" } } }, [
           _vm._v("Users")
         ])
@@ -38186,7 +38186,7 @@ var render = function() {
   return _c("div", { staticClass: "users" }, [
     _vm.loading
       ? _c("div", { staticClass: "loading" }, [
-          _vm._v("\n        Loading...\n    ")
+          _vm._v("\n        Now loading...\n    ")
         ])
       : _vm._e(),
     _vm._v(" "),

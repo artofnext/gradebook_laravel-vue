@@ -19,5 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/users', function () {
-    return User::with('role')->get();
+
+    // echo var_dump(User::with('role')->get());
+    return User::all();
 });

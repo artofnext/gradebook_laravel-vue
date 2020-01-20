@@ -1,7 +1,7 @@
 <template>
     <div class="users">
         <div class="loading" v-if="loading">
-            Loading...
+            Now loading...
         </div>
 
         <div v-if="error" class="error">
