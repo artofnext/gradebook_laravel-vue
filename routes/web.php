@@ -11,12 +11,12 @@
 |
 */
 
-
-Route::get('/{any}', 'SpaController@index')->where('any', '.*');
-
-
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
 Route::get('/allusers', 'AllUsers@index');
+
+Route::get('/{any}', 'SpaController@index')->where('any', '.*');
+
+
