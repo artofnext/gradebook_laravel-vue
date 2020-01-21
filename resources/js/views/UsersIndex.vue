@@ -3,8 +3,8 @@
         <div class="loading" v-if="loading">
             Now loading...
         </div>
-
-        <div v-if="error" class="error">
+        <div class="error" v-if="error">
+            Something went wrong. Try again later. <br>
             {{ error }}
         </div>
 
@@ -39,8 +39,17 @@ export default {
                     this.loading = false;
                     // console.log(response);
                     this.users = response.data;
+                }).catch((error) => {
+                    this.loading = false;
+                    this.error = error;
                 });
         }
     }
 }
 </script>
+
+<style lang="scss" scoped>
+    .error {
+        color: red;
+    }
+</style>
