@@ -42,6 +42,7 @@ import App from './views/App'
 import Hello from './views/Hello'
 import Home from './views/Home'
 import UsersIndex from './views/UsersIndex'
+// import DemoWarning from './views/DemoWarning'
 
 const router = new VueRouter({
     mode: 'history',
@@ -64,9 +65,17 @@ const router = new VueRouter({
     ],
 });
 
-const app = new Vue({
-    el: '#app',
-    components: { App },
+// const app = new Vue({
+//     el: '#app',
+//     components: {
+//         App,
+//         DemoWarning,
+//     },
+//     router,
+// });
+
+new Vue({
     router,
-});
+    render: function (h) { return h(App) },
+  }).$mount('#app')
 

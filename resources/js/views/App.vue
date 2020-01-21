@@ -1,7 +1,7 @@
 <template>
     <div class="container">
-        <h1>Vue Router Demo App</h1>
-
+        <demo-warning />
+        <header-comp :userName="userName" :userRole="userRole" :logged="logged"  />
         <p>
             <router-link :to="{ name: 'home' }">Home</router-link> |
             <router-link :to="{ name: 'hello' }">Hello World</router-link> |
@@ -14,7 +14,22 @@
     </div>
 </template>
 <script>
-    export default {}
+    import DemoWarning from './components/DemoWarning.vue';
+    import HeaderComp from './components/HeaderComp';
+
+    export default {
+        data() {
+            return {
+                userName: 'User Name',
+                userRole: 'Role',
+                logged: false,
+            }
+        },
+        components: {
+            DemoWarning,
+            HeaderComp,
+        }
+    }
 </script>
 
 <style lang="scss" scoped>
