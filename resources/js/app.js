@@ -33,48 +33,43 @@ window.Vue = require('vue');
 
 
 
-import Vue from 'vue'
-import VueRouter from 'vue-router'
 
-Vue.use(VueRouter)
+// import Vue from 'vue'
+// import VueRouter from 'vue-router'
 
-import App from './views/App'
-import Hello from './views/Hello'
-import Home from './views/Home'
-import UsersIndex from './views/UsersIndex'
-import UserLogin from './views/UserLogin'
-// import DemoWarning from './views/DemoWarning'
+// Vue.use(VueRouter)
 
-const router = new VueRouter({
-    mode: 'history',
-    routes: [
-        {
-            path: '/',
-            name: 'home',
-            component: Home
-        },
-        {
-            path: '/hello',
-            name: 'hello',
-            component: Hello,
-        },
-        {
-            path: '/users',
-            name: 'users.index',
-            component: UsersIndex,
-        },
-        {
-            path: '/login',
-            name: 'login',
-            component: UserLogin,
-        },
-        // {
-        //     path: '/secure',
-        //     name: 'secure',
-        //     component: UserSecure,
-        // },
-    ],
-});
+// import App from './views/App'
+// import Hello from './views/Hello'
+// import Home from './views/Home'
+// import UsersIndex from './views/UsersIndex'
+// import UserLogin from './views/UserLogin'
+
+// const router = new VueRouter({
+//     mode: 'history',
+//     routes: [
+//         {
+//             path: '/',
+//             name: 'home',
+//             component: Home
+//         },
+//         {
+//             path: '/hello',
+//             name: 'hello',
+//             component: Hello,
+//         },
+//         {
+//             path: '/users',
+//             name: 'users.index',
+//             component: UsersIndex,
+//         },
+//         {
+//             path: '/login',
+//             name: 'login',
+//             component: UserLogin,
+//         },
+//     ],
+// });
 
 // const app = new Vue({
 //     el: '#app',
@@ -84,6 +79,12 @@ const router = new VueRouter({
 //     },
 //     router,
 // });
+
+
+
+import Vue from 'vue'
+import router from './router'
+import App from './views/App'
 
 new Vue({
     router,

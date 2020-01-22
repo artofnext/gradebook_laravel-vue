@@ -1934,6 +1934,12 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_DemoWarning_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/DemoWarning.vue */ "./resources/js/views/components/DemoWarning.vue");
 /* harmony import */ var _components_HeaderComp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/HeaderComp */ "./resources/js/views/components/HeaderComp.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -1961,18 +1967,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+ // mock data object from backend
 
+var user = {
+  userId: "123456",
+  userName: 'User Name',
+  userRole: 'Role',
+  mockAccount: {
+    username: "user",
+    password: "password"
+  }
+};
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
-    return {
-      userName: 'User Name',
-      userRole: 'Role',
-      authenticated: false,
-      mockAccount: {
-        username: "user",
-        password: "password"
-      }
-    };
+    return _objectSpread({}, user, {
+      authenticated: false
+    });
   },
   components: {
     DemoWarning: _components_DemoWarning_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -1990,7 +2000,7 @@ __webpack_require__.r(__webpack_exports__);
     if (!this.authenticated) {
       this.$router.replace({
         name: "login"
-      });
+      })["catch"](function (err) {});
     }
   }
 });
@@ -6841,7 +6851,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#login[data-v-2885ed4f] {\n    width: 500px;\n    border: 1px solid #CCCCCC;\n    background-color: #FFFFFF;\n    margin: auto;\n    margin-top: 50px;\n    padding: 20px;\n}\n", ""]);
+exports.push([module.i, "\n.login[data-v-2885ed4f] {\n    width: 500px;\n    border: 1px solid #CCCCCC;\n    background-color: #FFFFFF;\n    margin: auto;\n    margin-top: 50px;\n    padding: 20px;\n}\n.login-warning[data-v-2885ed4f] {\n    text-align: center;\n}\n", ""]);
 
 // exports
 
@@ -38569,13 +38579,13 @@ var render = function() {
     "dir",
     { staticClass: "login-container" },
     [
-      _c("dir", { staticClass: "login warning" }, [
+      _c("dir", { staticClass: "login-warning login" }, [
         _c("h1", [_vm._v("You not logged yet!")]),
         _vm._v(" "),
         _c("p", [_vm._v("Login first to have access to secure area")])
       ]),
       _vm._v(" "),
-      _c("form", { staticClass: "login-form", attrs: { id: "login" } }, [
+      _c("form", { staticClass: "login-form login", attrs: { id: "login" } }, [
         _c("h2", [_vm._v("Login")]),
         _vm._v(" "),
         _c("input", {
@@ -53874,12 +53884,8 @@ module.exports = function(module) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./router */ "./resources/js/router/index.js");
 /* harmony import */ var _views_App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./views/App */ "./resources/js/views/App.vue");
-/* harmony import */ var _views_Hello__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./views/Hello */ "./resources/js/views/Hello.vue");
-/* harmony import */ var _views_Home__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/Home */ "./resources/js/views/Home.vue");
-/* harmony import */ var _views_UsersIndex__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/UsersIndex */ "./resources/js/views/UsersIndex.vue");
-/* harmony import */ var _views_UserLogin__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/UserLogin */ "./resources/js/views/UserLogin.vue");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -53907,41 +53913,40 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 // const app = new Vue({
 //     el: '#app',
 // });
-
-
-
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
-
-
-
-
- // import DemoWarning from './views/DemoWarning'
-
-var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
-  mode: 'history',
-  routes: [{
-    path: '/',
-    name: 'home',
-    component: _views_Home__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }, {
-    path: '/hello',
-    name: 'hello',
-    component: _views_Hello__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }, {
-    path: '/users',
-    name: 'users.index',
-    component: _views_UsersIndex__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }, {
-    path: '/login',
-    name: 'login',
-    component: _views_UserLogin__WEBPACK_IMPORTED_MODULE_6__["default"]
-  } // {
-  //     path: '/secure',
-  //     name: 'secure',
-  //     component: UserSecure,
-  // },
-  ]
-}); // const app = new Vue({
+// import Vue from 'vue'
+// import VueRouter from 'vue-router'
+// Vue.use(VueRouter)
+// import App from './views/App'
+// import Hello from './views/Hello'
+// import Home from './views/Home'
+// import UsersIndex from './views/UsersIndex'
+// import UserLogin from './views/UserLogin'
+// const router = new VueRouter({
+//     mode: 'history',
+//     routes: [
+//         {
+//             path: '/',
+//             name: 'home',
+//             component: Home
+//         },
+//         {
+//             path: '/hello',
+//             name: 'hello',
+//             component: Hello,
+//         },
+//         {
+//             path: '/users',
+//             name: 'users.index',
+//             component: UsersIndex,
+//         },
+//         {
+//             path: '/login',
+//             name: 'login',
+//             component: UserLogin,
+//         },
+//     ],
+// });
+// const app = new Vue({
 //     el: '#app',
 //     components: {
 //         App,
@@ -53950,8 +53955,11 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 //     router,
 // });
 
+
+
+
 new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
-  router: router,
+  router: _router__WEBPACK_IMPORTED_MODULE_1__["default"],
   render: function render(h) {
     return h(_views_App__WEBPACK_IMPORTED_MODULE_2__["default"]);
   }
@@ -54001,6 +54009,67 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/router/index.js":
+/*!**************************************!*\
+  !*** ./resources/js/router/index.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _views_Hello__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../views/Hello */ "./resources/js/views/Hello.vue");
+/* harmony import */ var _views_Home__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../views/Home */ "./resources/js/views/Home.vue");
+/* harmony import */ var _views_UsersIndex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../views/UsersIndex */ "./resources/js/views/UsersIndex.vue");
+/* harmony import */ var _views_UserLogin__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../views/UserLogin */ "./resources/js/views/UserLogin.vue");
+
+
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+
+
+
+var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
+  mode: 'history',
+  routes: [{
+    path: '/',
+    name: 'home',
+    component: _views_Home__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }, {
+    path: '/hello',
+    name: 'hello',
+    component: _views_Hello__WEBPACK_IMPORTED_MODULE_2__["default"]
+  }, {
+    path: '/users',
+    name: 'users.index',
+    component: _views_UsersIndex__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }, {
+    path: '/login',
+    name: 'login',
+    component: _views_UserLogin__WEBPACK_IMPORTED_MODULE_5__["default"]
+  } // {
+  //     path: '/secure',
+  //     name: 'secure',
+  //     component: UserSecure,
+  // },
+  ]
+});
+/* harmony default export */ __webpack_exports__["default"] = (router); // import Vue from 'vue'
+// import VueRouter from 'vue-router'
+// Vue.use(VueRouter)
+// const routes = []
+// const router = new VueRouter({
+//   mode: 'history',
+//   base: process.env.BASE_URL,
+//   routes
+// })
+// export default router
 
 /***/ }),
 
