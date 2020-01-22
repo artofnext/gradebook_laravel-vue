@@ -1994,6 +1994,9 @@ var user = {
     },
     logout: function logout() {
       this.authenticated = false;
+      this.$router.replace({
+        name: "login"
+      })["catch"](function (err) {});
     }
   },
   mounted: function mounted() {

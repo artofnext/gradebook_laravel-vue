@@ -56,6 +56,7 @@
             },
             logout() {
                 this.authenticated = false;
+                this.$router.replace({ name: "login" }).catch(err => {});
             }
         },
         mounted() {
