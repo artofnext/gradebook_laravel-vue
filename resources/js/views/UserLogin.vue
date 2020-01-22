@@ -1,10 +1,10 @@
 <template>
   <dir class="login-container">
-    <dir class="login warning">
+    <dir class="login-warning login">
       <h1>You not logged yet!</h1>
       <p>Login first to have access to secure area</p>
     </dir>
-    <form id="login" class="login-form">
+    <form id="login" class="login-form login">
         <h2>Login</h2>
         <input type="text" name="username" v-model="input.username" placeholder="Username" />
         <input type="password" name="password" v-model="input.password" placeholder="Password" />
@@ -47,12 +47,15 @@
 </script>
 
 <style scoped>
-    #login {
+    .login {
         width: 500px;
         border: 1px solid #CCCCCC;
         background-color: #FFFFFF;
         margin: auto;
         margin-top: 50px;
         padding: 20px;
+    }
+    .login-warning {
+        text-align: center;
     }
 </style>
