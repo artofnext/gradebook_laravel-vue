@@ -42,6 +42,7 @@ import App from './views/App'
 import Hello from './views/Hello'
 import Home from './views/Home'
 import UsersIndex from './views/UsersIndex'
+import UserLogin from './views/UserLogin'
 // import DemoWarning from './views/DemoWarning'
 
 const router = new VueRouter({

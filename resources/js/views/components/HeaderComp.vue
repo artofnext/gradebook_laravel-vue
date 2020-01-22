@@ -7,11 +7,11 @@
                     <p>Hello, {{ userName }}!</p>
                     <p>you logged as {{ userRole }}</p>
                 </div>
-                <button>Log out</button>
+                <!-- <button>Log out</button> -->
             </div>
             <div class="not-logged" v-if="!logged">
                 <p>You not logged in!</p>
-                <button>Log In</button>
+                <!-- <button>Log In</button> -->
             </div>
         </div>
     </header>
