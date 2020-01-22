@@ -8,7 +8,7 @@
             <!-- <router-link :to="{ name: 'users.index' }">Users</router-link> -->
 
             <router-link
-                v-if="authenticated" to="/login"
+                v-if="authenticated" to="{ name: 'login' }"
                 v-on:click.native="logout()"
                 replace>Logout</router-link
             >

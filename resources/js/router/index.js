@@ -8,6 +8,7 @@ import Hello from '../views/Hello'
 import Home from '../views/Home'
 import UsersIndex from '../views/UsersIndex'
 import UserLogin from '../views/UserLogin'
+import UserSecure from '../views/UserSecure'
 
 const router = new VueRouter({
     mode: 'history',
@@ -32,11 +33,11 @@ const router = new VueRouter({
             name: 'login',
             component: UserLogin,
         },
-        // {
-        //     path: '/secure',
-        //     name: 'secure',
-        //     component: UserSecure,
-        // },
+        {
+            path: '/secure',
+            name: 'secure',
+            component: UserSecure,
+        },
     ],
 });
 
