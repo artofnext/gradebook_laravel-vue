@@ -28,16 +28,22 @@
     import DemoWarning from './components/DemoWarning.vue';
     import HeaderComp from './components/HeaderComp';
 
+    // mock data object from backend
+    let user = {
+        userId: "123456",
+        userName: 'User Name',
+        userRole: 'Role',
+        mockAccount: {
+            username: "user",
+            password: "password",
+        },
+    }
+
     export default {
         data() {
             return {
-                userName: 'User Name',
-                userRole: 'Role',
+                ...user,
                 authenticated: false,
-                mockAccount: {
-                    username: "user",
-                    password: "password"
-                },
             }
         },
         components: {
@@ -54,7 +60,7 @@
         },
         mounted() {
             if(!this.authenticated) {
-                this.$router.replace({ name: "login" });
+                this.$router.replace({ name: "login" }).catch(err => {});
             }
         },
     }
