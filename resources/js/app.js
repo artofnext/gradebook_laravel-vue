@@ -62,6 +62,16 @@ const router = new VueRouter({
             name: 'users.index',
             component: UsersIndex,
         },
+        {
+            path: '/login',
+            name: 'login',
+            component: UserLogin,
+        },
+        // {
+        //     path: '/secure',
+        //     name: 'secure',
+        //     component: UserSecure,
+        // },
     ],
 });
 
