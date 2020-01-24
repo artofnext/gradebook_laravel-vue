@@ -30,8 +30,8 @@
     </div>
 </template>
 <script>
-    import DemoWarning from './components/DemoWarning.vue';
-    import HeaderComp from './components/HeaderComp';
+    import DemoWarning from '../components/DemoWarning.vue';
+    import HeaderComp from '../components/HeaderComp';
 
     // mock data object from backend
     let user = {
