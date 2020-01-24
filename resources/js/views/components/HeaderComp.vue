@@ -7,7 +7,7 @@
                     <p>Hello, {{ userName }}!</p>
                     <p>you logged as {{ userRole }}</p>
                 </div>
-                <!-- <button>Log out</button> -->
+                <button @click="logout">Log out</button>
             </div>
             <div class="not-logged" v-if="!logged">
                 <p>You not logged in!</p>
@@ -23,7 +23,12 @@ export default {
         userName: String,
         userRole: String,
         logged: Boolean,
-    }
+    },
+    methods: {
+        logout() {
+            this.$router.push({ name: "login",});
+        },
+    },
 }
 </script>
 

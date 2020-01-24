@@ -1966,6 +1966,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
  // mock data object from backend
 
@@ -1997,7 +2002,14 @@ var user = {
       this.$router.replace({
         name: "login"
       })["catch"](function (err) {});
-    }
+    },
+    login: function login() {
+      this.authenticated = false;
+      this.$router.replace({
+        name: "login"
+      })["catch"](function (err) {});
+    },
+    goBack: function goBack() {}
   },
   mounted: function mounted() {
     if (!this.authenticated) {
@@ -2259,6 +2271,13 @@ __webpack_require__.r(__webpack_exports__);
     userName: String,
     userRole: String,
     logged: Boolean
+  },
+  methods: {
+    logout: function logout() {
+      this.$router.push({
+        name: "login"
+      });
+    }
   }
 });
 
@@ -6807,7 +6826,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".container[data-v-91ac6b5c] {\n  max-width: 800px;\n  margin: 50px auto;\n}\n.container h1[data-v-91ac6b5c] {\n  color: red;\n}", ""]);
+exports.push([module.i, ".container[data-v-91ac6b5c] {\n  max-width: 800px;\n  margin: 50px auto;\n}\n.container h1[data-v-91ac6b5c] {\n  color: red;\n}\n.router-link-exact-active[data-v-91ac6b5c] {\n  color: blue;\n}", ""]);
 
 // exports
 
@@ -38541,23 +38560,53 @@ var render = function() {
       _c(
         "p",
         [
-          _vm.authenticated
-            ? _c(
-                "router-link",
-                {
-                  attrs: { to: "{ name: 'login' }", replace: "" },
-                  nativeOn: {
-                    click: function($event) {
-                      return _vm.logout()
-                    }
-                  }
-                },
-                [_vm._v("Logout")]
-              )
-            : _vm._e()
+          _c("router-link", { attrs: { to: { name: "home" } } }, [
+            _vm._v("Home")
+          ]),
+          _vm._v(" |\n        "),
+          _c("router-link", { attrs: { to: { name: "hello" } } }, [
+            _vm._v("Hello World")
+          ]),
+          _vm._v(" |\n        "),
+          _c("router-link", { attrs: { to: { name: "users.index" } } }, [
+            _vm._v("Users")
+          ])
         ],
         1
       ),
+      _c("hr"),
+      _vm._v(" "),
+      !_vm.authenticated
+        ? _c(
+            "router-link",
+            {
+              attrs: { to: "{ name: 'login' }", replace: "" },
+              nativeOn: {
+                click: function($event) {
+                  return _vm.login()
+                }
+              }
+            },
+            [_vm._v("Login")]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.authenticated
+        ? _c(
+            "router-link",
+            {
+              attrs: { to: "{ name: 'login' }", replace: "" },
+              nativeOn: {
+                click: function($event) {
+                  return _vm.logout()
+                }
+              }
+            },
+            [_vm._v("Logout")]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _c("p"),
       _vm._v(" "),
       _c(
         "div",
@@ -38888,7 +38937,9 @@ var render = function() {
               _c("p", [_vm._v("Hello, " + _vm._s(_vm.userName) + "!")]),
               _vm._v(" "),
               _c("p", [_vm._v("you logged as " + _vm._s(_vm.userRole))])
-            ])
+            ]),
+            _vm._v(" "),
+            _c("button", { on: { click: _vm.logout } }, [_vm._v("Log out")])
           ])
         : _vm._e(),
       _vm._v(" "),
@@ -54157,6 +54208,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: 'history',
+  // mode: 'hash',
   routes: [{
     path: '/',
     name: 'home',
@@ -54179,16 +54231,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     component: _views_UserSecure__WEBPACK_IMPORTED_MODULE_6__["default"]
   }]
 });
-/* harmony default export */ __webpack_exports__["default"] = (router); // import Vue from 'vue'
-// import VueRouter from 'vue-router'
-// Vue.use(VueRouter)
-// const routes = []
-// const router = new VueRouter({
-//   mode: 'history',
-//   base: process.env.BASE_URL,
-//   routes
-// })
-// export default router
+/* harmony default export */ __webpack_exports__["default"] = (router);
 
 /***/ }),
 

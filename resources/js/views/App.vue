@@ -1,18 +1,23 @@
 <template>
     <div class="container">
         <demo-warning />
-        <header-comp :userName="userName" :userRole="userRole" :logged="authenticated"  />
+        <header-comp :userName="userName" :userRole="userRole" :logged="authenticated" />
         <p>
-            <!-- <router-link :to="{ name: 'home' }">Home</router-link> | -->
-            <!-- <router-link :to="{ name: 'hello' }">Hello World</router-link> | -->
-            <!-- <router-link :to="{ name: 'users.index' }">Users</router-link> -->
+            <router-link :to="{ name: 'home' }">Home</router-link> |
+            <router-link :to="{ name: 'hello' }">Hello World</router-link> |
+            <router-link :to="{ name: 'users.index' }">Users</router-link>
+            <hr>
 
+            <router-link
+                v-if="!authenticated" to="{ name: 'login' }"
+                v-on:click.native="login()"
+                replace>Login</router-link
+            >
             <router-link
                 v-if="authenticated" to="{ name: 'login' }"
                 v-on:click.native="logout()"
                 replace>Logout</router-link
             >
-
         </p>
 
         <div >
@@ -57,6 +62,13 @@
             logout() {
                 this.authenticated = false;
                 this.$router.replace({ name: "login" }).catch(err => {});
+            },
+            login() {
+                this.authenticated = false;
+                this.$router.replace({ name: "login" }).catch(err => {});
+            },
+            goBack() {
+
             }
         },
         mounted() {
@@ -75,5 +87,9 @@
         h1 {
             color: red;
         }
+    }
+
+    .router-link-exact-active {
+        color: blue;
     }
 </style>
