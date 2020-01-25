@@ -21,72 +21,13 @@ window.Vue = require('vue');
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-// const app = new Vue({
-//     el: '#app',
-// });
-
-
-
-
-// import Vue from 'vue'
-// import VueRouter from 'vue-router'
-
-// Vue.use(VueRouter)
-
-// import App from './views/App'
-// import Hello from './views/Hello'
-// import Home from './views/Home'
-// import UsersIndex from './views/UsersIndex'
-// import UserLogin from './views/UserLogin'
-
-// const router = new VueRouter({
-//     mode: 'history',
-//     routes: [
-//         {
-//             path: '/',
-//             name: 'home',
-//             component: Home
-//         },
-//         {
-//             path: '/hello',
-//             name: 'hello',
-//             component: Hello,
-//         },
-//         {
-//             path: '/users',
-//             name: 'users.index',
-//             component: UsersIndex,
-//         },
-//         {
-//             path: '/login',
-//             name: 'login',
-//             component: UserLogin,
-//         },
-//     ],
-// });
-
-// const app = new Vue({
-//     el: '#app',
-//     components: {
-//         App,
-//         DemoWarning,
-//     },
-//     router,
-// });
-
-
-
 import Vue from 'vue'
 import router from './router'
+import store from './store'
 import App from './views/App'
 
 new Vue({
+    store,
     router,
     render: function (h) { return h(App) },
   }).$mount('#app')

@@ -6,7 +6,7 @@
             <router-link :to="{ name: 'home' }">Home</router-link> |
             <router-link :to="{ name: 'hello' }">Hello World</router-link> |
             <router-link :to="{ name: 'users.index' }">Users</router-link>
-            <hr>
+            <hr \>
 
             <router-link
                 v-if="!authenticated" to="{ name: 'login' }"
@@ -32,6 +32,7 @@
 <script>
     import DemoWarning from '../components/DemoWarning.vue';
     import HeaderComp from '../components/HeaderComp';
+    import { mapState } from 'vuex'
 
     // mock data object from backend
     let user = {
@@ -71,6 +72,9 @@
 
             }
         },
+        computed: mapState({
+            authenticated: state => state.logged,
+        }),
         mounted() {
             if(!this.authenticated) {
                 this.$router.replace({ name: "login" }).catch(err => {});
