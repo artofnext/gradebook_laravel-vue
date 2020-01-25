@@ -38612,9 +38612,94 @@ render._withStripped = true
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/App.vue?vue&type=template&id=91ac6b5c&scoped=true& ***!
   \*************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/vue-loader/lib/loaders/templateLoader.js):\nSyntaxError: Unexpected token (1:486)\n    at Parser.pp$4.raise (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:2757:13)\n    at Parser.pp.unexpected (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:647:8)\n    at Parser.pp$3.parsePropertyValue (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:2482:17)\n    at Parser.pp$3.parseProperty (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:2434:8)\n    at Parser.pp$3.parseObj (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:2380:23)\n    at Parser.pp$3.parseExprAtom (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:2179:17)\n    at Parser.<anonymous> (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:6003:24)\n    at Parser.parseExprAtom (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:6129:31)\n    at Parser.pp$3.parseExprSubscripts (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:2047:19)\n    at Parser.pp$3.parseMaybeUnary (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:2024:17)\n    at Parser.pp$3.parseExprOps (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:1966:19)\n    at Parser.pp$3.parseMaybeConditional (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:1949:19)\n    at Parser.pp$3.parseMaybeAssign (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:1925:19)\n    at Parser.pp$3.parsePropertyValue (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:2443:87)\n    at Parser.pp$3.parseProperty (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:2434:8)\n    at Parser.pp$3.parseObj (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:2380:23)\n    at Parser.pp$3.parseExprAtom (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:2179:17)\n    at Parser.<anonymous> (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:6003:24)\n    at Parser.parseExprAtom (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:6129:31)\n    at Parser.pp$3.parseExprSubscripts (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:2047:19)\n    at Parser.pp$3.parseMaybeUnary (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:2024:17)\n    at Parser.pp$3.parseExprOps (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:1966:19)\n    at Parser.pp$3.parseMaybeConditional (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:1949:19)\n    at Parser.pp$3.parseMaybeAssign (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:1925:19)\n    at Parser.pp$3.parseExprList (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:2663:20)\n    at Parser.pp$3.parseSubscripts (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:2075:29)\n    at Parser.pp$3.parseExprSubscripts (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:2050:21)\n    at Parser.pp$3.parseMaybeUnary (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:2024:17)\n    at Parser.pp$3.parseExprOps (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:1966:19)\n    at Parser.pp$3.parseMaybeConditional (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:1949:19)\n    at Parser.pp$3.parseMaybeAssign (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:1925:19)\n    at Parser.pp$3.parseExprList (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:2663:20)\n    at Parser.pp$3.parseExprAtom (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:2175:26)\n    at Parser.<anonymous> (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:6003:24)\n    at Parser.parseExprAtom (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:6129:31)\n    at Parser.pp$3.parseExprSubscripts (C:\\Users\\Alex\\Code\\project1\\blog\\node_modules\\vue-template-es2015-compiler\\buble.js:2047:19)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _c("demo-warning"),
+      _vm._v(" "),
+      _c("header-comp", {
+        attrs: {
+          userName: _vm.userName,
+          userRole: _vm.userRole,
+          logged: _vm.authenticated
+        }
+      }),
+      _vm._v(" "),
+      _c(
+        "p",
+        [
+          _c("router-link", { attrs: { to: { name: "home" } } }, [
+            _vm._v("Home")
+          ]),
+          _vm._v(" |\n        "),
+          _c("router-link", { attrs: { to: { name: "hello" } } }, [
+            _vm._v("Hello World")
+          ]),
+          _vm._v(" |\n        "),
+          _c("router-link", { attrs: { to: { name: "users.index" } } }, [
+            _vm._v("Users")
+          ])
+        ],
+        1
+      ),
+      _c("hr"),
+      _vm._v(" "),
+      !_vm.authenticated
+        ? _c(
+            "router-link",
+            {
+              attrs: { to: "{ name: 'login' }", replace: "" },
+              nativeOn: {
+                click: function($event) {
+                  return _vm.login()
+                }
+              }
+            },
+            [_vm._v("Login")]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.authenticated
+        ? _c(
+            "router-link",
+            {
+              attrs: { to: "{ name: 'login' }", replace: "" },
+              nativeOn: {
+                click: function($event) {
+                  return _vm.logout()
+                }
+              }
+            },
+            [_vm._v("Logout")]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _c("p"),
+      _vm._v(" "),
+      _c(
+        "div",
+        [_c("router-view", { on: { authenticated: _vm.setAuthenticated } })],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
 
 /***/ }),
 
@@ -55371,8 +55456,18 @@ __webpack_require__.r(__webpack_exports__);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   state: {
-    logged: false
-  }
+    logged: false,
+    user: {
+      userId: "123456",
+      userName: 'User Name',
+      userRole: 'Role',
+      mockAccount: {
+        username: "user",
+        password: "password"
+      }
+    }
+  },
+  mutations: {}
 });
 /* harmony default export */ __webpack_exports__["default"] = (store);
 
@@ -55451,7 +55546,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!*******************************************************************************!*\
   !*** ./resources/js/views/App.vue?vue&type=template&id=91ac6b5c&scoped=true& ***!
   \*******************************************************************************/
-/*! exports provided: render, staticRenderFns */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
