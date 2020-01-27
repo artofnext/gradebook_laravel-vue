@@ -26,6 +26,12 @@ import router from './router'
 import store from './store'
 import App from './views/App'
 
+import axios from 'axios';
+import VueAxios from 'vue-axios';
+
+Vue.use(VueAxios, axios);
+axios.defaults.baseURL = 'http://localhost:8000/api';
+
 new Vue({
     store,
     router,

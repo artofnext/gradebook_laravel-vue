@@ -4,11 +4,10 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-import Hello from '../views/Hello'
-import Home from '../views/Home'
-import UsersIndex from '../views/UsersIndex'
-import UserLogin from '../views/UserLogin'
-import UserSecure from '../views/UserSecure'
+import Secure from '../views/Secure.vue';
+import Home from '../views/Home.vue';
+import Register from '../views/Register.vue';
+import Login from '../views/Login.vue';
 
 const router = new VueRouter({
     mode: 'history',
@@ -20,24 +19,28 @@ const router = new VueRouter({
             component: Home,
         },
         {
-            path: '/hello',
-            name: 'hello',
-            component: Hello,
-        },
-        {
-            path: '/users',
-            name: 'users.index',
-            component: UsersIndex,
+            path: '/register',
+            name: 'register',
+            component: Register,
+            meta: {
+                auth: false
+            },
         },
         {
             path: '/login',
             name: 'login',
-            component: UserLogin,
+            component: Login,
+            meta: {
+                auth: false
+            }
         },
         {
             path: '/secure',
             name: 'secure',
-            component: UserSecure,
+            component: Secure,
+            meta: {
+                auth: true
+            }
         },
     ],
 });

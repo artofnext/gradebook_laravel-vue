@@ -2,13 +2,34 @@
     <div class="container">
         <demo-warning />
         <header-comp :userName="userName" :userRole="userRole" :logged="authenticated" />
+        <div class="panel panel-default">
+        <div class="panel-heading">
+            <nav>
+                <ul class="list-inline">
+                    <li>
+                        <router-link :to="{ name: 'home' }">Home</router-link>
+                    </li>
+                    <li class="pull-right">
+                        <router-link :to="{ name: 'login' }">Login</router-link>
+                    </li>
+                    <li class="pull-right">
+                        <router-link :to="{ name: 'register' }">Register</router-link>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="panel-body">
+            <router-view></router-view>
+        </div>
+    </div>
+
         <p>
-            <router-link :to="{ name: 'home' }">Home</router-link> |
+            <!-- <router-link :to="{ name: 'home' }">Home</router-link> |
             <router-link :to="{ name: 'hello' }">Hello World</router-link> |
             <router-link :to="{ name: 'users.index' }">Users</router-link>
-            <hr>
+            <hr> -->
 
-            <router-link
+            <!-- <router-link
                 v-if="!authenticated" to="{ name: 'login' }"
                 v-on:click.native="login()"
                 replace>Login</router-link
@@ -17,12 +38,12 @@
                 v-if="authenticated" to="{ name: 'login' }"
                 v-on:click.native="logout()"
                 replace>Logout</router-link
-            >
+            > -->
         </p>
 
         <div >
 
-            <router-view @authenticated="setAuthenticated" />
+            <!-- <router-view @authenticated="setAuthenticated" /> -->
 
             <!-- <router-view></router-view> -->
 
@@ -35,15 +56,15 @@
     import { mapState } from 'vuex'
 
     // mock data object from backend
-    let user = {
-        userId: "123456",
-        userName: 'User Name',
-        userRole: 'Role',
-        mockAccount: {
-            username: "user",
-            password: "password",
-        },
-    }
+    // let user = {
+    //     userId: "123456",
+    //     userName: 'User Name',
+    //     userRole: 'Role',
+    //     mockAccount: {
+    //         username: "user",
+    //         password: "password",
+    //     },
+    // }
 
     export default {
         data() {
@@ -57,29 +78,19 @@
             HeaderComp,
         },
         methods: {
-            setAuthenticated(status) {
-                this.authenticated = status;
-            },
-            logout() {
-                this.authenticated = false;
-                this.$router.replace({ name: "login" }).catch(err => {});
-            },
-            login() {
-                this.authenticated = false;
-                this.$router.replace({ name: "login" }).catch(err => {});
-            },
-            goBack() {
 
-            }
         },
-        computed: mapState({
+        computed: {
+            ...mapState({
             authenticated: state => state.logged,
+            user: user => state.user,
         }),
-        mounted() {
-            if(!this.authenticated) {
-                this.$router.replace({ name: "login" }).catch(err => {});
-            }
         },
+        // mounted() {
+        //     if(!this.authenticated) {
+        //         this.$router.replace({ name: "login" }).catch(err => {});
+        //     }
+        // },
     }
 </script>
 
