@@ -69,8 +69,10 @@
     export default {
         data() {
             return {
-                ...user,
+                // user: $state.user,
                 authenticated: false,
+                userName: '',
+                userRole: '',
             }
         },
         components: {
@@ -80,12 +82,12 @@
         methods: {
 
         },
-        computed: {
-            ...mapState({
-            authenticated: state => state.logged,
-            user: user => state.user,
-        }),
-        },
+        // computed: {
+        //     ...mapState({
+        //         authenticated: state => state.logged,
+        //         user: user => state.user,
+        //     }),
+        // },
         // mounted() {
         //     if(!this.authenticated) {
         //         this.$router.replace({ name: "login" }).catch(err => {});

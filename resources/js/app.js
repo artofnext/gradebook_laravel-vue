@@ -28,9 +28,18 @@ import App from './views/App'
 
 import axios from 'axios';
 import VueAxios from 'vue-axios';
+import VueAuth from '@websanova/vue-auth'
+
+Vue.router = router;
 
 Vue.use(VueAxios, axios);
 axios.defaults.baseURL = 'http://localhost:8000/api';
+
+Vue.use(VueAuth, {
+    auth: require('@websanova/vue-auth/drivers/auth/bearer.js'),
+    http: require('@websanova/vue-auth/drivers/http/axios.1.x.js'),
+    router: require('@websanova/vue-auth/drivers/router/vue-router.2.x.js'),
+ });
 
 new Vue({
     store,
