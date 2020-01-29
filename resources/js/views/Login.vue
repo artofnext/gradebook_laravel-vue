@@ -2,7 +2,7 @@
     <div>
         <div class="alert alert-danger" v-if="error">
             <p>There was an error, unable to sign in with those credentials.</p>
-            <p> {{ message }}
+            <p> {{ message }} </p>
         </div>
         <form autocomplete="off" @submit.prevent="login" method="post">
             <div class="form-group">
@@ -37,9 +37,17 @@ export default {
         login() {
             this.$auth.login({
                 data: {email: this.email, password: this.password},
-                rememberMe: true
-            }).then()
-            ;
+                success: function() {
+                        console.log('Success!');
+                    },
+                error: function(resp) {
+                    console.log('Wrong!');
+                    console.log(resp);
+                    this.error = 'true';
+                    this.message = resp;
+                },
+                rememberMe: true,
+            });
         }
     }
 }
