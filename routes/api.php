@@ -24,6 +24,9 @@ Route::get('/users', function () {
     return User::all();
 });
 
+
+Route::post('auth/register', 'AuthController@register');
+
 // jwt
 Route::group([
 
