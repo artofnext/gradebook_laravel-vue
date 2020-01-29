@@ -14,18 +14,17 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('auth/register', 'AuthController@register');
+
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 Route::get('/users', function () {
-
-    // echo var_dump(User::with('role')->get());
     return User::all();
 });
 
 
-Route::post('auth/register', 'AuthController@register');
 
 // jwt
 Route::group([

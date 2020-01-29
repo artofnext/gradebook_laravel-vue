@@ -41,6 +41,8 @@ Vue.use(VueAuth, {
     router: require('@websanova/vue-auth/drivers/router/vue-router.2.x.js'),
  });
 
+ App.router = Vue.router;
+
 new Vue({
     store,
     router,
